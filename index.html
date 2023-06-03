@@ -1,0 +1,34 @@
+<html>
+
+<body>
+
+    <div class="full-height" id="blip"></div>
+
+    <script src="https://unpkg.com/blip-chat-widget" type="text/javascript"></script>
+    <script>
+        (function () {
+            window.onload = function () {
+                new BlipChat()
+                    .withAppKey('ZXVnZW5pb3BvcnR1Z3Vlc3YyOmQyNWU3ODUwLTk3ZmEtNGM5MS05YjlkLWQyNjQ1NWVjNDM0NQ==')
+                    .withButton({ "color": "#4717c9", "icon": "" })
+                    .withCustomCommonUrl('https://leandro-mattos-e75a1.chat.blip.ai/')
+                    .withTarget("blip")
+                    .withEventHandler(BlipChat.CREATE_ACCOUNT_EVENT, function () {
+                        blipClient.sendCommand({
+                            id: "1",
+                            to: "postmaster@msging.net",
+                            method: "set",
+                            uri: `/contexts/{identity}/${userIdentity}`,
+                            type: "text/plain",
+                            resource: "testehash"
+                        })
+                    })
+                    .build();
+            }
+        })();
+    </script>
+
+
+</body>
+
+</html>
