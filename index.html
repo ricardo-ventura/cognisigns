@@ -9,11 +9,20 @@
 
         (function () {
             window.onload = function () {
+
+                const queryString = window.location.search
+                const urlParams = new URLSearchParams(queryString)
+                const hash = urlParams.get('hash')
+
                 new BlipChat()
                     .withAppKey('ZXVnZW5pb3BvcnR1Z3Vlc3YyOmQyNWU3ODUwLTk3ZmEtNGM5MS05YjlkLWQyNjQ1NWVjNDM0NQ==')
                     .withButton({ "color": "#4717c9", "icon": "" })
                     .withCustomCommonUrl('https://leandro-mattos-e75a1.chat.blip.ai/')
-                    .withCustomMessageMetadata({ urlVariables: window.location.href })
+                    .withAccount({
+                        extras: {
+                            hash: hash
+                        }
+                    })
                     .withTarget("blip")
                     .build();
             }
