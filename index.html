@@ -18,7 +18,11 @@
                     .withAppKey('ZXVnZW5pb3BvcnR1Z3Vlc3YyOmQyNWU3ODUwLTk3ZmEtNGM5MS05YjlkLWQyNjQ1NWVjNDM0NQ==')
                     .withButton({ "color": "#4717c9", "icon": "" })
                     .withCustomCommonUrl('https://leandro-mattos-e75a1.chat.blip.ai/')
-                    .withCustomMessageMetadata({ hash: hash })
+                    .withAccount({
+                        extras: {
+                            hash: hash
+                        }
+                    })
                     .withTarget("blip")
                     .build();
             }
