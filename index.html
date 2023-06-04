@@ -12,17 +12,12 @@
                     .withAppKey('ZXVnZW5pb3BvcnR1Z3Vlc3YyOmQyNWU3ODUwLTk3ZmEtNGM5MS05YjlkLWQyNjQ1NWVjNDM0NQ==')
                     .withButton({ "color": "#4717c9", "icon": "" })
                     .withCustomCommonUrl('https://leandro-mattos-e75a1.chat.blip.ai/')
-                    .withTarget("blip")
-                    .withEventHandler(BlipChat.CREATE_ACCOUNT_EVENT, function () {
-                        blipClient.sendCommand({
-                            id: "1",
-                            to: "postmaster@msging.net",
-                            method: "set",
-                            uri: "/contexts/{identity}/31796027-0223-45dd-bb5e-b4cfb834c10f.eugenioportuguesv2@0mn.io",
-                            type: "text/plain",
-                            resource: "testehash"
-                        })
+                    .withAccount({
+                        extras: {
+                            hash: 'gold'
+                        }
                     })
+                    .withTarget("blip")
                     .build();
             }
         })();
