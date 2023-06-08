@@ -1,4 +1,22 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
 <html>
+
+<head>
+    <title>Eugênio</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        ​ .full-height {
+            height: 100%;
+        }
+    </style>
+    ​
+</head>
 
 <body>
 
@@ -18,6 +36,7 @@
                     .withAppKey('ZXVnZW5pb3BvcnR1Z3Vlc3YyOmQyNWU3ODUwLTk3ZmEtNGM5MS05YjlkLWQyNjQ1NWVjNDM0NQ==')
                     .withButton({ "color": "#4717c9", "icon": "" })
                     .withCustomCommonUrl('https://leandro-mattos-e75a1.chat.blip.ai/')
+                    .withEventHandler(BlipChat.LOAD_EVENT, function () { window.localStorage.clear() })
                     .withAccount({
                         extras: {
                             hash: hash
