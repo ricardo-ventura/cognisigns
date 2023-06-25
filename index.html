@@ -36,6 +36,7 @@
                     .withButton({ "color": "#4717c9", "icon": "" })
                     .withCustomCommonUrl('https://leandro-mattos-e75a1.chat.blip.ai/')
                     .withEventHandler(BlipChat.LOAD_EVENT, function () { window.localStorage.clear() })
+                    .withEventHandler(BlipChat.CREATE_ACCOUNT_EVENT, function () { blipClient.sendMessage({ "type": "application/vnd.lime.chatstate+json", "content": { "state": "starting" } }) })
                     .withAccount({
                         extras: {
                             hash: hash
